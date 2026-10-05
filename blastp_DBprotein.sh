@@ -1,7 +1,9 @@
 #!/bin/bash
 #Script BLASTP y NCBI PROTEIN
+mkdir -p /mnt/d/prueba/descargafastas/ACCdescargas
+mkdir -p /mnt/d/prueba/blast/newcolumnaespecie/filtromejor
+mkdir -p /mnt/d/prueba/resultadoblast
 Lista=(NP_001154368.1 NP_001185099.1) #ejemplos
-
 for ACC in "${Lista[@]}"; do
 
 	curl -s "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=protein&id=${ACC}&rettype=fasta&retmode=text" > /mnt/d/prueba/descargafastas/ACCdescargas/${ACC}_control.fasta
